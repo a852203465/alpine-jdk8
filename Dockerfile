@@ -26,25 +26,6 @@ RUN set -eux  \
     && rm -rf *.apk  \
     && rm -rf /var/cache/apk/*
 
-RUN cd /usr/local/java/jre1.8.0_351 \
-    && rm -rf COPYRIGHT LICENSE README release THIRDPARTYLICENSEREADME-JAVAFX.txtTHIRDPARTYLICENSEREADME.txt Welcome.html \
-        rm -rf lib/plugin.jar \
-        lib/ext/jfxrt.jar \
-        bin/javaws \
-        lib/javaws.jar \
-        lib/desktop \
-        plugin \
-        lib/deploy* \
-        lib/*javafx* \
-        lib/*jfx* \
-        lib/amd64/libdecora_sse.so \
-        lib/amd64/libprism_*.so \
-        lib/amd64/libfxplugins.so \
-        lib/amd64/libglass.so \
-        lib/amd64/libgstreamer-lite.so \
-        lib/amd64/libjavafx*.so \
-        lib/amd64/libjfx*.so
-
 # 设置JAVA变量环境
 ENV JAVA_HOME=/usr/local/java/jre1.8.0_351
 ENV CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/lib:$CLASSPATH
